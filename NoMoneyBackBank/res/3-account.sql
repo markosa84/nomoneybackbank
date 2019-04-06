@@ -1,3 +1,6 @@
+--DROP SEQUENCE account_seq;
+--DROP TABLE account;
+ 
 CREATE SEQUENCE account_seq;
  
 CREATE TABLE account (
