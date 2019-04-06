@@ -10,7 +10,7 @@ public class Account {
     private Integer clientId;
     private Integer balance;
     private String currency;
-    private Character status;
+    private String status;
     private LocalDateTime updatedAt;
     private LocalDateTime createdAt;
 
