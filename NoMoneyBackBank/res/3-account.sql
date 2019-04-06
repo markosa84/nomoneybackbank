@@ -10,7 +10,7 @@ CREATE TABLE account (
     CONSTRAINT account_pk PRIMARY KEY ( account_id ),
     CONSTRAINT status_ck1 CHECK ( status IN (
         'A',
-        'I'
+        'D'
     ) )
     updated_at   TIMESTAMP DEFAULT systimestamp NOT NULL,
     created_at   TIMESTAMP DEFAULT systimestamp NOT NULL,
