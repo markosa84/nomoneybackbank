@@ -4,33 +4,33 @@ import java.time.LocalDateTime;
 
 public class Partner {
 	
-	private int partnerId;
+	private Integer partnerId;
 	private String partnerName;
 	private String accountNumber;
 	private String notice;
 	private String recipientName;
-	private char status;
+	private Integer clientId;
+	private String status;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
-	private int clientId;
 	
-	Partner(int partnerId, String partnerName, String accountNumber, String notice, String recipientName, char status, LocalDateTime createdAt, LocalDateTime updatedAt, int clientId) {
+	Partner(Integer partnerId, String partnerName, String accountNumber, String notice, String recipientName, Integer clientId, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
 		this.partnerId = partnerId;
 		this.partnerName = partnerName;
 		this.accountNumber = accountNumber;
 		this.notice = notice;
 		this.recipientName = recipientName;
+		this.clientId = clientId;
 		this.status = status;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.clientId = clientId;
 	}
 
-	public int getPartnerId() {
+	public Integer getPartnerId() {
 		return partnerId;
 	}
 
-	public void setPartnerId(int partnerId) {
+	public void setPartnerId(Integer partnerId) {
 		this.partnerId = partnerId;
 	}
 
@@ -66,11 +66,19 @@ public class Partner {
 		this.recipientName = recipientName;
 	}
 
-	public char getStatus() {
+	public Integer getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(Integer clientId) {
+		this.clientId = clientId;
+	}
+
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(char status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -90,26 +98,18 @@ public class Partner {
 		this.updatedAt = updatedAt;
 	}
 
-	public int getClientId() {
-		return clientId;
-	}
-
-	public void setClientId(int clientId) {
-		this.clientId = clientId;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((accountNumber == null) ? 0 : accountNumber.hashCode());
-		result = prime * result + clientId;
+		result = prime * result + ((clientId == null) ? 0 : clientId.hashCode());
 		result = prime * result + ((createdAt == null) ? 0 : createdAt.hashCode());
 		result = prime * result + ((notice == null) ? 0 : notice.hashCode());
-		result = prime * result + partnerId;
+		result = prime * result + ((partnerId == null) ? 0 : partnerId.hashCode());
 		result = prime * result + ((partnerName == null) ? 0 : partnerName.hashCode());
 		result = prime * result + ((recipientName == null) ? 0 : recipientName.hashCode());
-		result = prime * result + status;
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((updatedAt == null) ? 0 : updatedAt.hashCode());
 		return result;
 	}
@@ -128,7 +128,10 @@ public class Partner {
 				return false;
 		} else if (!accountNumber.equals(other.accountNumber))
 			return false;
-		if (clientId != other.clientId)
+		if (clientId == null) {
+			if (other.clientId != null)
+				return false;
+		} else if (!clientId.equals(other.clientId))
 			return false;
 		if (createdAt == null) {
 			if (other.createdAt != null)
@@ -140,7 +143,10 @@ public class Partner {
 				return false;
 		} else if (!notice.equals(other.notice))
 			return false;
-		if (partnerId != other.partnerId)
+		if (partnerId == null) {
+			if (other.partnerId != null)
+				return false;
+		} else if (!partnerId.equals(other.partnerId))
 			return false;
 		if (partnerName == null) {
 			if (other.partnerName != null)
@@ -152,7 +158,10 @@ public class Partner {
 				return false;
 		} else if (!recipientName.equals(other.recipientName))
 			return false;
-		if (status != other.status)
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
 			return false;
 		if (updatedAt == null) {
 			if (other.updatedAt != null)
@@ -164,9 +173,11 @@ public class Partner {
 
 	@Override
 	public String toString() {
-		return "Partner [partnerId=" + partnerId + ", partnerName=" + partnerName + ", accountNumber=" + accountNumber + ", notice=" + notice + ", recipientName=" + recipientName + ", status="
-				+ status + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", clientId=" + clientId + "]";
+		return "Partner [partnerId=" + partnerId + ", partnerName=" + partnerName + ", accountNumber=" + accountNumber + ", notice=" + notice + ", recipientName=" + recipientName + ", clientId="
+				+ clientId + ", status=" + status + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
+	
+	
 	
 
 }
