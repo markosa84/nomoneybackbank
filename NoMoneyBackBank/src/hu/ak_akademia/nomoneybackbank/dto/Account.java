@@ -5,94 +5,94 @@ import java.util.Objects;
 
 public class Account {
 
-    private int accountId;
+    private Integer accountId;
     private String accountNumber;
-    private int clientId;
-    private int balance;
+    private Integer clientId;
+    private Integer balance;
     private String currency;
-    private char status;
+    private Character status;
     private LocalDateTime updatedAt;
     private LocalDateTime createdAt;
 
     public Account() {
     }
 
-    public Account(int accountId, String accountNumber, int clientId, int balance, String currency, char status, LocalDateTime updatedAt, LocalDateTime createdAt) {
-        this.accountId = accountId;
-        this.accountNumber = accountNumber;
-        this.clientId = clientId;
-        this.balance = balance;
-        this.currency = currency;
-        this.status = status;
-        this.updatedAt = updatedAt;
-        this.createdAt = createdAt;
-    }
+    public Account(Integer accountId, String accountNumber, Integer clientId, Integer balance, String currency, Character status, LocalDateTime updatedAt, LocalDateTime createdAt) {
+		this.accountId = accountId;
+		this.accountNumber = accountNumber;
+		this.clientId = clientId;
+		this.balance = balance;
+		this.currency = currency;
+		this.status = status;
+		this.updatedAt = updatedAt;
+		this.createdAt = createdAt;
+	}
 
-    public int getAccountId() {
-        return accountId;
-    }
+	public Integer getAccountId() {
+		return accountId;
+	}
 
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
-    }
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+	public String getAccountNumber() {
+		return accountNumber;
+	}
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
 
-    public int getClientId() {
-        return clientId;
-    }
+	public Integer getClientId() {
+		return clientId;
+	}
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
-    }
+	public void setClientId(Integer clientId) {
+		this.clientId = clientId;
+	}
 
-    public int getBalance() {
-        return balance;
-    }
+	public Integer getBalance() {
+		return balance;
+	}
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
+	public void setBalance(Integer balance) {
+		this.balance = balance;
+	}
 
-    public String getCurrency() {
-        return currency;
-    }
+	public String getCurrency() {
+		return currency;
+	}
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
 
-    public char getStatus() {
-        return status;
-    }
+	public Character getStatus() {
+		return status;
+	}
 
-    public void setStatus(char status) {
-        this.status = status;
-    }
+	public void setStatus(Character status) {
+		this.status = status;
+	}
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
 
-    @Override
+	@Override
     public int hashCode() {
         return Objects.hash(accountId, accountNumber, balance, clientId, createdAt, currency, status, updatedAt);
     }
