@@ -14,7 +14,7 @@ public class Partner {
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 	
-	Partner(Integer partnerId, String partnerName, String accountNumber, String notice, String recipientName, Integer clientId, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+	public Partner(Integer partnerId, String partnerName, String accountNumber, String notice, String recipientName, Integer clientId, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
 		this.partnerId = partnerId;
 		this.partnerName = partnerName;
 		this.accountNumber = accountNumber;
