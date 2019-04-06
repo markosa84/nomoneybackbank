@@ -1,4 +1,8 @@
-CREATE SEQUENCE account_seq;
+--drop sequence account_history_seq;
+
+CREATE SEQUENCE account_history_seq;
+
+--drop table account_history;
 
 CREATE TABLE account_history (
     account_history_id         NUMBER(20) NOT NULL,
