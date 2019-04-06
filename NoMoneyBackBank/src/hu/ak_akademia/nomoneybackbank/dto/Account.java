@@ -17,7 +17,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(Integer accountId, String accountNumber, Integer clientId, Integer balance, String currency, Character status, LocalDateTime updatedAt, LocalDateTime createdAt) {
+    public Account(Integer accountId, String accountNumber, Integer clientId, Integer balance, String currency, String status, LocalDateTime updatedAt, LocalDateTime createdAt) {
 		this.accountId = accountId;
 		this.accountNumber = accountNumber;
 		this.clientId = clientId;
@@ -68,11 +68,11 @@ public class Account {
 		this.currency = currency;
 	}
 
-	public Character getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Character status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
