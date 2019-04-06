@@ -1,20 +1,23 @@
 package hu.ak_akademia.nomoneybackbank.dto;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Account {
 
-	private int accountId;
-	private String accountNumber;
-	private int clientId;
-	private int balance;
-	private String currency;
-	private char status;
-	private LocalDateTime updatedAt;
-	private LocalDateTime createdAt;
-	
-	public Account(int accountId, String accountNumber, int clientId, int balance, String currency, char status, LocalDateTime updatedAt, LocalDateTime createdAt) {
-		super();
+    private Integer accountId;
+    private String accountNumber;
+    private Integer clientId;
+    private Integer balance;
+    private String currency;
+    private Character status;
+    private LocalDateTime updatedAt;
+    private LocalDateTime createdAt;
+
+    public Account() {
+    }
+
+    public Account(Integer accountId, String accountNumber, Integer clientId, Integer balance, String currency, Character status, LocalDateTime updatedAt, LocalDateTime createdAt) {
 		this.accountId = accountId;
 		this.accountNumber = accountNumber;
 		this.clientId = clientId;
@@ -25,11 +28,11 @@ public class Account {
 		this.createdAt = createdAt;
 	}
 
-	public int getAccountId() {
+	public Integer getAccountId() {
 		return accountId;
 	}
 
-	public void setAccountId(int accountId) {
+	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
 	}
 
@@ -41,19 +44,19 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
-	public int getClientId() {
+	public Integer getClientId() {
 		return clientId;
 	}
 
-	public void setClientId(int clientId) {
+	public void setClientId(Integer clientId) {
 		this.clientId = clientId;
 	}
 
-	public int getBalance() {
+	public Integer getBalance() {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(Integer balance) {
 		this.balance = balance;
 	}
 
@@ -65,11 +68,11 @@ public class Account {
 		this.currency = currency;
 	}
 
-	public char getStatus() {
+	public Character getStatus() {
 		return status;
 	}
 
-	public void setStatus(char status) {
+	public void setStatus(Character status) {
 		this.status = status;
 	}
 
@@ -90,10 +93,47 @@ public class Account {
 	}
 
 	@Override
-	public String toString() {
-		return "Account [accountId=" + accountId + ", accountNumber=" + accountNumber + ", clientId=" + clientId + ", balance=" + balance + ", currency=" + currency + ", status=" + status
-				+ ", updatedAt=" + updatedAt + ", createdAt=" + createdAt + "]";
-	}
+    public int hashCode() {
+        return Objects.hash(accountId, accountNumber, balance, clientId, createdAt, currency, status, updatedAt);
+    }
 
-	
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Account)) {
+            return false;
+        }
+        Account other = (Account) obj;
+        return accountId == other.accountId && Objects.equals(accountNumber, other.accountNumber) && balance == other.balance && clientId == other.clientId
+                && Objects.equals(createdAt, other.createdAt) && Objects.equals(currency, other.currency) && status == other.status && Objects.equals(updatedAt, other.updatedAt);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Account [accountId=");
+        builder.append(accountId);
+        builder.append(", accountNumber=");
+        builder.append(accountNumber);
+        builder.append(", clientId=");
+        builder.append(clientId);
+        builder.append(", balance=");
+        builder.append(balance);
+        builder.append(", currency=");
+        builder.append(currency);
+        builder.append(", status=");
+        builder.append(status);
+        builder.append(", updatedAt=");
+        builder.append(updatedAt);
+        builder.append(", createdAt=");
+        builder.append(createdAt);
+        builder.append("]");
+        return builder.toString();
+    }
+
 }
