@@ -1,8 +1,8 @@
-DROP SEQUENCE partner_seq;
+--DROP SEQUENCE partner_seq;
  
-DROP TABLE partner;
-
 CREATE SEQUENCE partner_seq;
+
+--DROP TABLE partner;
 
 CREATE TABLE partner (
     partner_id      NUMBER(20) NOT NULL,
