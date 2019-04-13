@@ -6,7 +6,7 @@ CREATE SEQUENCE account_seq;
 
 CREATE TABLE account (
     account_id       NUMBER(20) NOT NULL,
-    account_number   VARCHAR(50) NOT NULL,
+    account_number   VARCHAR(26) NOT NULL,
     client_id        NUMBER(20) NOT NULL,
     balance          NUMBER(20) NOT NULL,
     currency         CHAR(3) NOT NULL,
@@ -17,3 +17,18 @@ CREATE TABLE account (
     CONSTRAINT account_ck1 CHECK (status IN ('A', 'D')),
     CONSTRAINT account_fk1 FOREIGN KEY (client_id) REFERENCES client (client_id)
 );
+
+
+--Modify 1
+ALTER TABLE
+   account
+modify
+(
+   account_number    VARCHAR(26)
+); 
+
+--Modify 2
+ALTER TABLE
+   account
+ADD (
+CONSTRAINT account_ck2 CHECK (REGEXP_LIKE (account_number, '^\d{8}-\d{8}-\d{8}$')));
