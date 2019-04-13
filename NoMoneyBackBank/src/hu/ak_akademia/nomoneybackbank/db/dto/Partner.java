@@ -1,4 +1,4 @@
-package hu.ak_akademia.nomoneybackbank.dto;
+package hu.ak_akademia.nomoneybackbank.db.dto;
 
 import java.time.LocalDateTime;
 
