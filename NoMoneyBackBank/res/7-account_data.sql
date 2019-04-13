@@ -1,7 +1,7 @@
 
 
 INSERT INTO account (account_id, account_number, client_id, balance, currency, status, updated_at, created,at)
-VALUES (account_seq.NEXTVAL, '12345678-12345678-123456678', '1', '50000', 'HUF', 'A', TO_DATE('2018.03.25', 'YYYY.MM.DD'), TO_DATE('2015.02.12', 'YYYY.MM.DD'));
+VALUES (account_seq.NEXTVAL, '12345678-12345678-12345678', '1', '50000', 'HUF', 'A', TO_DATE('2018.03.25', 'YYYY.MM.DD'), TO_DATE('2015.02.12', 'YYYY.MM.DD'));
 
 INSERT INTO account (account_id, account_number, client_id, balance, currency, status, updated_at, created,at)
 VALUES (account_seq.NEXTVAL, '87654321-87654321-87654321', '2', '290000', 'HUF', 'A', TO_DATE('2019.01.20', 'YYYY.MM.DD'), TO_DATE('2016.02.12', 'YYYY.MM.DD'));
