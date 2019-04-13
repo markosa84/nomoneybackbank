@@ -1,14 +1,15 @@
 package hu.ak_akademia.nomoneybackbank.dto;
 
+import java.sql.Connection;
 import java.util.List;
 
 public interface DatabaseDao <E> {
 	
-	void getConnection();
+	Connection getConnection() throws Exception;
 	void create(E entity);
-	void update(E entity);
+	void update(E entity, E updateWith);
 	void delete(E entity);
-	void getById(int id);
+	E getById(int id);
 	List<E> getAll();
 	
 
