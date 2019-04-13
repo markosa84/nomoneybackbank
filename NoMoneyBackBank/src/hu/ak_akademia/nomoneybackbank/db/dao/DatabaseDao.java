@@ -1,4 +1,4 @@
-package hu.ak_akademia.nomoneybackbank.dto;
+package hu.ak_akademia.nomoneybackbank.db.dao;
 
 import java.sql.Connection;
 import java.util.List;

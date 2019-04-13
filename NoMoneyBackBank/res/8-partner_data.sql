@@ -1,3 +1,4 @@
+SET SCAN OFF;
 DROP SEQUENCE partner_seq;
 CREATE SEQUENCE partner_seq;
  
