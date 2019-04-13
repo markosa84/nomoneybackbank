@@ -1,8 +1,4 @@
---DROP SEQUENCE account_seq;
-
 CREATE SEQUENCE account_seq;
-
---DROP TABLE account;
 
 CREATE TABLE account (
     account_id       NUMBER(20) NOT NULL,

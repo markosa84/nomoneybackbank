@@ -1,8 +1,4 @@
---DROP SEQUENCE client_seq;
-
 CREATE SEQUENCE client_seq;
-
---DROP TABLE client;
 
 CREATE TABLE client (
     client_id              NUMBER(20) NOT NULL,
